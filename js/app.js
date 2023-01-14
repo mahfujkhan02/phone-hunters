@@ -11,6 +11,27 @@ const displayPhones = phones =>{
    const phoneContainer = document.getElementById('phone-container')
    phoneContainer.innerText = ``;
 
+//    display 20 phones only
+
+   phones = phones.slice(0,20)
+
+   // display no phone found 
+
+   const nophone = document.getElementById('no-found-message')
+
+   if(phones.length === 0){
+
+    nophone.classList.remove('d-none')
+
+   }
+   else{
+    nophone.classList.add('d-none')
+   }
+
+     
+
+   // display all phone 
+
    phones.forEach(phone => {
 
     const phoneDiv = document.createElement('div')
@@ -37,4 +58,4 @@ document.getElementById('btn-serach').addEventListener('click', function(){
     loadPhones(searchText)
 });
 
-loadPhones()
+//loadPhones()
